@@ -1,0 +1,20 @@
+<svg width="144" height="210" viewBox="0 0 144 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 20H144V205C144 207.761 141.761 210 139 210H0V20Z" fill="#C5E9FD"/>
+<rect width="144" height="20" fill="#FC8193"/>
+<path d="M64 20H80V210H69C66.2386 210 64 207.761 64 205V20Z" fill="#7F7F89"/>
+<path d="M64 20H80V210H69C66.2386 210 64 207.761 64 205V20Z" fill="#A1C1D3"/>
+<rect x="64" width="16" height="20" fill="#7F7F89"/>
+<rect x="64" width="16" height="20" fill="#CC6981"/>
+<rect x="11" y="51" width="121" height="8" rx="4" fill="#849ABB"/>
+<rect x="11" y="95" width="121" height="8" rx="4" fill="#849ABB"/>
+<rect x="52" y="73" width="40" height="8" rx="4" fill="#849ABB"/>
+<rect x="38" y="73" width="68" height="8" rx="4" fill="#849ABB"/>
+<rect x="38" y="117" width="68" height="8" rx="4" fill="#849ABB"/>
+<rect x="68" y="148" width="8" height="8" rx="4" fill="#FAFAFA"/>
+<rect x="68" y="161" width="8" height="35" rx="4" fill="#FAFAFA"/>
+<path d="M90.2019 28.5878C92.8313 23.7311 98.9001 21.9255 103.757 24.555C108.614 27.1844 110.419 33.2532 107.79 38.1099L55.4183 134.843L37.8305 125.321L90.2019 28.5878Z" fill="#FFE162"/>
+<path d="M90.2019 28.5878C92.8313 23.7311 98.9001 21.9255 103.757 24.555L46.6244 130.082L37.8305 125.321L90.2019 28.5878Z" fill="#EBC628"/>
+<path d="M35.6734 150.619L38.0084 126.297L54.763 135.368L35.6734 150.619Z" fill="#C5B29C"/>
+<rect x="103.247" y="40.1992" width="5" height="30" rx="2" transform="rotate(28.4312 103.247 40.1992)" fill="#7C90A0"/>
+<path d="M97.3431 15.3969C98.6578 12.9686 101.692 12.0658 104.121 13.3805L112.914 18.1416C115.343 19.4563 116.246 22.4906 114.931 24.919L107.789 38.1099L90.2016 28.5878L97.3431 15.3969Z" fill="#FC8193"/>
+</svg>
