@@ -10,7 +10,7 @@ import More from "../../screens/More";
 import { Settings } from "../../screens/Settings";
 import { Form } from "../../screens/Form";
 import { InfoOrder } from "../../screens/Tools/infoOrder";
-import { Nivelamento } from "../../screens/Nivelamento";
+import { Payment } from "../../screens/Payment";
 
 const { Navigator, Screen, Group } = createBottomTabNavigator();
 
@@ -107,13 +107,7 @@ export function AppRoutes() {
                     }
                 }}
             />
-            <Screen 
-                name="nivelamento"
-                component={Nivelamento}
-                options={{
-                    tabBarStyle: {
-                        display: "none",
-                    },
+            <Screen name="payment" component={Payment} options={{
                     tabBarItemStyle: {
                         display: "none"
                     }

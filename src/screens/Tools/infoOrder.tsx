@@ -74,15 +74,16 @@ export function InfoOrder() {
                 {/* <Button  title="test" onPress={() => {console.log(route)}} /> */}
                 <ScrollView showsVerticalScrollIndicator={false} style={{width: "100%"}}>
                     <HStack justifyContent="space-between" mb={2}>
-                        <HStack space={2}>
-                            <Text>Status: {progressLegend[status]}</Text>
+                        <HStack space={1} alignItems="center">
+                            <Text fontSize={18}>Status: </Text>
+                            <Text fontWeight="bold" fontSize={18}>{progressLegend[status]}</Text>
                         </HStack>
                         <HStack space={2} alignItems="center">
                             <Text>Entrega: {moment(date).format("DD [de] MMM, YYYY")}</Text>
                             <Calendar color={colorMode == "dark" ? "white" : "black"} />
                         </HStack>
                     </HStack>
-                    <Text>{desc}</Text>
+                    <Text mt={4} fontSize={16}>{desc}</Text>
                 </ScrollView>
 
                 {status !== "text-green-500" && <Button onPress={changeStatus} title="Concluir" isLoading={isLoading} _loading={{_spinner: {bg: "turquiose.400"}}} position="absolute" bottom={4}  py={2} bg="turquoise.400" _pressed={{bg: "turquoise.500"}} w="full" mt="auto"/>}

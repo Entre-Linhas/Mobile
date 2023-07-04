@@ -16,6 +16,7 @@ export declare global {
             welcome: undefined;
             signin: undefined;
             signup: undefined;
+            payment: undefined;
             formOrder?: {requestId: number, title: string, nome: string, price: number, estado: "text-yellow-500" | "text-red-500" | "text-green-500", date: string};
             infoOrder: {id: number; title: string; description?: string; nome?: string; price: number; estado: "text-yellow-500" | "text-red-500" | "text-green-500"; date: string;};
         }

@@ -48,9 +48,12 @@ export function Profile() {
     const { toggleColorMode, colorMode } = useColorMode();
 
     useEffect(() => {
-        api.get("/api/redesocial/" + perfil.idPerfil)
+        api.get("/redesocial/" + perfil.idPerfil)
             .then((res) => {
                 setRedes(res.data.link);
+            })
+            .catch(err => {
+                console.log("RS", err)
             })
     }, [])
 
@@ -99,16 +102,18 @@ export function Profile() {
                         }
 
                         <Box>
-                            <Text fontFamily="Nunito.heading" fontSize="lg">Nível</Text>
-                            <Text>{perfil.nivel}</Text>
-                        </Box>
-                        <Box>
-                            <Text fontFamily="Nunito.heading" fontSize="lg">Membro desde</Text>
-                            <Text>06/01/2023</Text>
-                        </Box>
-                        <Box>
-                            <Text fontFamily="Nunito.heading" fontSize="lg">Melhor sequência</Text>
-                            <Text>{perfil.combo} Dia(s)</Text>
+                            <Box>
+                                <Text fontFamily="Nunito.heading" fontSize="lg">Nível</Text>
+                                <Text>{perfil.nivel}</Text>
+                            </Box>
+                            <Box>
+                                <Text fontFamily="Nunito.heading" fontSize="lg">Membro desde</Text>
+                                <Text>06/01/2023</Text>
+                            </Box>
+                            <Box>
+                                <Text fontFamily="Nunito.heading" fontSize="lg">Melhor sequência</Text>
+                                <Text>{perfil.combo} Dia(s)</Text>
+                            </Box>
                         </Box>
                     </VStack>
                 </Box>

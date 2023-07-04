@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, FormControl, Heading, Image, Modal, ScrollView,  VStack, Wrap, Pressable, Avatar, useColorMode } from "native-base";
+import { Box, FormControl, Heading, Image, Modal, ScrollView,  VStack, Wrap, Pressable, Avatar, useColorMode, useToast } from "native-base";
 
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
@@ -8,6 +8,7 @@ import { Line } from "../../components/Line";
 import { useAuth } from "../../hooks/useAuth";
 import { LockSimple } from "phosphor-react-native";
 import { api } from "../../services/api";
+import { Button } from "../../components/Button";
 
 
 export const avatars = [
@@ -76,10 +77,12 @@ export const avatars = [
 export function ProfileSettings() {
     const { perfil, setNewPerfil } = useAuth();
     const [showModal, setShowModal] = useState(false);
+    const [servico, setServico] = useState(false);
     const [redes, setRedes] = useState<string[]>([]);
     const { colorMode } = useColorMode();
+    const toast = useToast();
     useEffect(() => {
-        api.get("/apai/redesocial/" + perfil.idPerfil)
+        api.get("/redesocial/" + perfil.idPerfil)
             .then((res) => {
                 if(res.data) {
                     setRedes(res.data.link)
@@ -88,7 +91,28 @@ export function ProfileSettings() {
                 .catch(err => {
                     console.log(err);
                 })
-    }, [])
+    }, []);
+
+
+    function handleSaving() {
+        try {
+            setNewPerfil("servico", servico);
+            toast.show({
+                title: "Sobre mim alterado!",
+                placement: "bottom",
+                bgColor: "jade.500"
+            })
+        } catch (err) {
+            console.log(err)
+            toast.show({
+                title: "Ocorreu um erro ao salvar o Sobre mim",
+                placement: "bottom",
+                bgColor: "bittersweet.700"
+            })
+        }
+
+
+    } 
     
 
     // useEffect(() => {
@@ -150,6 +174,8 @@ export function ProfileSettings() {
                         <Input isDisabled value={perfil.usuario.endereco} rightElement={<LockSimple color={colorMode == "dark" ? "white" : "black"} style={{marginHorizontal: 6}} />}/>
                     </Box>
                 </VStack>
+
+                <Button title="Salvar" onPress={handleSaving} bg="turquoise.400" _pressed={{bg: "turquoise.300"}} />
             </ScrollView>
 
             <Modal isOpen={showModal} onClose={() => setShowModal(false)} safeArea>

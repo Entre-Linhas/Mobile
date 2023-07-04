@@ -35,7 +35,6 @@ export function MoreList() {
 
             <ScrollView px={2} py={3}>
                 <VStack space={4} mt={2}>
-                    <Nav _leftIcon={House} title="Início" onPress={() => navigate("home")}/>
                     <Nav _leftIcon={Wrench} title="Ferramentas" onPress={() => navigate("tools")}/>
                     <Nav _leftIcon={UserCircle} title="Perfil" onPress={() => navigate("profile")}/>
                     <Nav _leftIcon={BellSimple} _rightIcon={CaretRight} title="Notificações" onPress={() => navigate("notification")}/>
@@ -44,8 +43,8 @@ export function MoreList() {
                     <Line />
 
                     <Nav _leftIcon={Crown} _rightIcon={CaretRight} title="Planos" onPress={() => navigate("plans")}/>
-                    <Nav _leftIcon={Browser} _rightIcon={ArrowSquareOut} title="Página Web" onPress={() => WebBrowser.openBrowserAsync("https://google.com/")}/>
-                    <Nav _leftIcon={UsersThree} _rightIcon={ArrowSquareOut} title="Comunidade" onPress={() => WebBrowser.openBrowserAsync("https://google.com/")}/>
+                    <Nav _leftIcon={Browser} _rightIcon={ArrowSquareOut} title="Página Web" onPress={() => WebBrowser.openBrowserAsync("https://entre-linhas.debugon.xyz/")}/>
+                    <Nav _leftIcon={UsersThree} _rightIcon={ArrowSquareOut} title="Comunidade" onPress={() => WebBrowser.openBrowserAsync("https://o327339.invisionservice.com/")}/>
 
                     <Line />
                     
@@ -56,7 +55,7 @@ export function MoreList() {
 
                     <Line />
 
-                    <Text onPress={() => WebBrowser.openBrowserAsync("https://google.com/")}>Sobre o Entre Linhas</Text>
+                    <Text onPress={() => WebBrowser.openBrowserAsync("https://entre-linhas.debugon.xyz/sobre")}>Sobre o Entre Linhas</Text>
                     
                     
                 </VStack>

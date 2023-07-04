@@ -94,7 +94,7 @@ export function AuthProvider({ children }: AuthProviderProps ) {
     useEffect(() => {
         async function loadStorage() {
             const storagedUser = await SecureStore.getItemAsync("Authuser");
-            console.log("[Storaged User]",storagedUser);
+            // console.log("[Storaged User]",storagedUser);
             if(storagedUser !== null) {
                 const userJSON = JSON.parse(storagedUser);
                 setIsUserLoading(true);
@@ -107,7 +107,7 @@ export function AuthProvider({ children }: AuthProviderProps ) {
                     await api.get("/perfis/" + userJSON.id)
                         .then((res) => {
                             if(res.data) {
-                                console.log("Foi!");
+                                console.log("Logando...");
                                 setPerfil(res.data);
                                 setAtividades(res.data.trilhas.atividades)
                                 setSigned(true);

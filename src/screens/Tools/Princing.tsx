@@ -1,4 +1,4 @@
-import { Box, FormControl, Stack, Actionsheet, useDisclose, Text, HStack, Heading, ScrollView, IStackProps, useColorMode } from "native-base";
+import { Box, FormControl, Stack, Actionsheet, useDisclose, Text, HStack, Heading, ScrollView, IStackProps, useColorMode, Modal, Wrap, VStack } from "native-base";
 import { THEME } from "../../styles/theme";
 import { Input } from "../../components/Input";
 import { CaretDown, CaretUp, Coins, Plus, Stack as StackIcon, Tag, X } from "phosphor-react-native";
@@ -23,6 +23,7 @@ export function Pricing() {
     const [productName, setProductName] = useState<string>("");
     const [price, setPrice] = useState<string>("");
     const [qnt, setQnt] = useState<number>(0);
+    const [showModal, setShowModal] = useState(false);
     const { colorMode } = useColorMode();
     const [product, setProduct] = useState<productInputProps[]>([]);
     const [precoFinal, setPrecoFinal] = useState(0);
@@ -47,6 +48,8 @@ export function Pricing() {
         product.forEach((prod) => {
             setPrecoFinal(precoFinal + ((Number(prod.princing) / 100) * Number(prod.total)) * Number(prod.qnt));
         })
+
+        setShowModal(true);
 
         setProduct([]);
     }
@@ -122,6 +125,20 @@ export function Pricing() {
                         </Stack>
                     </ScrollView>
                 </FormControl>
+
+
+                <Modal isOpen={showModal} onClose={() => setShowModal(false)} safeArea>
+                    <Modal.Content>
+                        <Modal.CloseButton />
+                        <Modal.Header>Total</Modal.Header>
+                        <Modal.Body>
+                            <VStack>
+                                <Text>O preço total é de:</Text>
+                                <Text color="turquoise.400">{precoFinal.toLocaleString("pt-br", { currency: "BRL", style: "currency" })}</Text>
+                            </VStack>
+                        </Modal.Body>
+                    </Modal.Content>
+                </Modal>
 
                 <Actionsheet isOpen={isOpen} onClose={onClose}>
                     <Actionsheet.Content _dragIndicator={{
